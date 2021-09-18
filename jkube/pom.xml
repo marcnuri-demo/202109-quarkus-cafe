@@ -16,6 +16,8 @@
     <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
     <quarkus.platform.version>2.2.3.Final</quarkus.platform.version>
     <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
+<!--    <jkube.namespace>mnurisan-dev</jkube.namespace>--> <!-- Uncomment to set, unset uses current context -->
+    <jkube.environment>dev</jkube.environment>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -103,6 +105,13 @@
     </plugins>
   </build>
   <profiles>
+    <profile>
+      <id>prod</id>
+      <properties>
+        <jkube.namespace>mnurisan-stage</jkube.namespace>
+        <jkube.environment>prod</jkube.environment>
+      </properties>
+    </profile>
     <profile>
       <id>native</id>
       <activation>
