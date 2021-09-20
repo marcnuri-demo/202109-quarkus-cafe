@@ -16,12 +16,8 @@ commands:
   id: dev-run
 - exec:
     commandLine: mvn -Dmaven.repo.local=/home/user/.m2/repository quarkus:dev -Dquarkus.http.host=0.0.0.0
-<<<<<<< HEAD
       -Dquarkus.package.type=mutable-jar -Dquarkus.live-reload.password=123 -Djava.util.logging.manager=org.jboss.logmanager.LogManager
       -Ddebug=${DEBUG_PORT}
-=======
-      -Djava.util.logging.manager=org.jboss.logmanager.LogManager -Ddebug=${DEBUG_PORT}
->>>>>>> 49acb0eeed3b21cbef93dbc77862db557f9383e3
     component: tools
     group:
       isDefault: true
