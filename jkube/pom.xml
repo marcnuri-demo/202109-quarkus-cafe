@@ -111,6 +111,7 @@
         <jkube.environment>prod</jkube.environment>
         <jkube.build.strategy>jib</jkube.build.strategy>
         <jkube.generator.name>quay.io/manusa/202109-quarkus-cafe:jkube</jkube.generator.name>
+        <jkube.build.switchToDeployment>true</jkube.build.switchToDeployment>
         <jkube.enricher.jkube-controller.pullPolicy>Always</jkube.enricher.jkube-controller.pullPolicy>
       </properties>
     </profile>
