@@ -8,6 +8,16 @@ The Java sources and resources for the project are in the `common/java` and
 
 ### Vanilla Quarkus
 
+### Vanilla Quarkus with odo
+
+1. Create a configuration describing a component.
+    `odo create vanilla-odo --devfile devfile.yaml`
+2. Push source code to a component.
+    `odo push --show-log`
+3. Check the URL endpoint
+    `odo url list`
+4. Debug mode
+    `odo push --debug`
 
 ### Eclipse JKube
 
