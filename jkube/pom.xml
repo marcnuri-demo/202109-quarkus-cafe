@@ -16,7 +16,6 @@
     <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
     <quarkus.platform.version>2.2.3.Final</quarkus.platform.version>
     <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
-<!--    <jkube.namespace>mnurisan-dev</jkube.namespace>--> <!-- Uncomment to set, unset uses current context -->
     <jkube.environment>dev</jkube.environment>
   </properties>
   <dependencyManagement>
@@ -97,11 +96,6 @@
           </systemPropertyVariables>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.eclipse.jkube</groupId>
-        <artifactId>kubernetes-maven-plugin</artifactId>
-        <version>1.4.0</version>
-      </plugin>
     </plugins>
   </build>
   <profiles>
@@ -111,6 +105,7 @@
         <jkube.environment>prod</jkube.environment>
         <jkube.build.strategy>jib</jkube.build.strategy>
         <jkube.generator.name>quay.io/manusa/202109-quarkus-cafe:jkube</jkube.generator.name>
+        <jkube.build.switchToDeployment>true</jkube.build.switchToDeployment>
         <jkube.enricher.jkube-controller.pullPolicy>Always</jkube.enricher.jkube-controller.pullPolicy>
       </properties>
     </profile>

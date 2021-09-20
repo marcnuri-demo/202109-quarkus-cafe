@@ -1,6 +1,7 @@
 name: JKube Demo Pipeline
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
