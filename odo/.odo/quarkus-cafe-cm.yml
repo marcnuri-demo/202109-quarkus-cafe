@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: quarkus-cafe-cm
+data:
+  environment: dev
+  caffe: Espresso

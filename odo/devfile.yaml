@@ -1,3 +1,16 @@
+metadata:
+  description: Quarkus with Java
+  displayName: Quarkus Java
+  icon: https://design.jboss.org/quarkus/logo/final/SVG/quarkus_icon_rgb_default.svg
+  language: java
+  name: vanilla-odo
+  projectType: quarkus
+  tags:
+  - Java
+  - Quarkus
+  version: 1.1.0
+  website: https://quarkus.io
+schemaVersion: 2.0.0
 commands:
 - exec:
     commandLine: mvn -Dmaven.repo.local=/home/user/.m2/repository compile
@@ -26,6 +39,19 @@ commands:
     workingDir: $PROJECTS_ROOT
   id: dev-debug
 components:
+#- name: quarkus-cafe-cm
+#  kubernetes:
+    # panic: interface conversion:
+    # uri: "file://./.odo/quarkus-cafe-cm.yml"
+    # ConfigMap; please check the "kind" field in the yaml (it's case-sensitive)
+    # inlined: |
+    #   apiVersion: v1
+    #   kind: ConfigMap
+    #   metadata:
+    #     name: quarkus-cafe-cm
+    #   data:
+    #     environment: dev
+    #     caffe: Espresso
 - container:
     endpoints:
     - exposure: public
@@ -49,19 +75,6 @@ components:
 events:
   postStart:
   - init-compile
-metadata:
-  description: Quarkus with Java
-  displayName: Quarkus Java
-  icon: https://design.jboss.org/quarkus/logo/final/SVG/quarkus_icon_rgb_default.svg
-  language: java
-  name: vanilla-odo
-  projectType: quarkus
-  tags:
-  - Java
-  - Quarkus
-  version: 1.1.0
-  website: https://quarkus.io
-schemaVersion: 2.0.0
 starterProjects:
 - name: community
   zip:
