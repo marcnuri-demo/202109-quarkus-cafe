@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Helm Charts
-          path: target/jkube/helm
+          path: jkube/target/jkube/helm
       - name: Authenticate and set context
         uses: redhat-actions/oc-login@v1
         with:
