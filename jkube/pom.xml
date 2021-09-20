@@ -16,7 +16,6 @@
     <quarkus.platform.group-id>io.quarkus</quarkus.platform.group-id>
     <quarkus.platform.version>2.2.3.Final</quarkus.platform.version>
     <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
-<!--    <jkube.namespace>mnurisan-dev</jkube.namespace>--> <!-- Uncomment to set, unset uses current context -->
     <jkube.environment>dev</jkube.environment>
   </properties>
   <dependencyManagement>
@@ -96,11 +95,6 @@
             <maven.home>${maven.home}</maven.home>
           </systemPropertyVariables>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.eclipse.jkube</groupId>
-        <artifactId>kubernetes-maven-plugin</artifactId>
-        <version>1.4.0</version>
       </plugin>
     </plugins>
   </build>
