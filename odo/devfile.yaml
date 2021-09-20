@@ -16,7 +16,8 @@ commands:
   id: dev-run
 - exec:
     commandLine: mvn -Dmaven.repo.local=/home/user/.m2/repository quarkus:dev -Dquarkus.http.host=0.0.0.0
-      -Djava.util.logging.manager=org.jboss.logmanager.LogManager -Ddebug=${DEBUG_PORT}
+      -Dquarkus.package.type=mutable-jar -Dquarkus.live-reload.password=123 -Djava.util.logging.manager=org.jboss.logmanager.LogManager
+      -Ddebug=${DEBUG_PORT}
     component: tools
     group:
       isDefault: true
@@ -32,6 +33,9 @@ components:
       path: /
       protocol: http
       targetPort: 8080
+    env:
+    - name: QUARKUS_LAUNCH_DEVMODE
+      value: "true"
     image: registry.access.redhat.com/ubi8/openjdk-11
     memoryLimit: 512Mi
     mountSources: true

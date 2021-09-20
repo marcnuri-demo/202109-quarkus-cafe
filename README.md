@@ -8,16 +8,31 @@ The Java sources and resources for the project are in the `common/java` and
 
 ### Vanilla Quarkus
 
+1. Local Dev
+    `mvn quarkus:dev`
+
 ### Vanilla Quarkus with odo
 
 1. Create a configuration describing a component.
+
     `odo create vanilla-odo --devfile devfile.yaml`
 2. Push source code to a component.
+
     `odo push --show-log`
 3. Check the URL endpoint
+
     `odo url list`
-4. Debug mode
+4. Set Quarkus Dev Mode
+
+    `odo config set -e QUARKUS_LAUNCH_DEVMODE=true`
+
+5. Remote & Debug mode
+
     `odo push --debug`
+
+6. Quarkus Remote Dev
+
+    `mvn quarkus:remote-dev -Dquarkus.live-reload.password=123 -Dquarkus.live-reload.url=http://vanilla-odo-8080-app-mmascia-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com`
 
 ### Eclipse JKube
 
